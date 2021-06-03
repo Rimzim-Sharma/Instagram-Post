@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram Post</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+  
+  <script type='text/javascript'>
+    function preview_image(event)
+    {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+    var output = document.getElementById('output_image');
+    output.src = reader.result;
+    }
+   reader.readAsDataURL(event.target.files[0]);
+    }
+
+
+
+
+    //alert
+    $(document).ready(function(){
+      $("form").submit(function(){
+        alert("Your data is successfully submitted!");
+      });
+    });
+
+
+    function myFunction5() {
+      document.getElementById("ww1").style.display = "block";
+    }
+    function myFunction6() {
+      document.getElementById("ww2").style.display = "block";
+    }
+    function myFunction7() {
+      document.getElementById("ww3").style.display = "block";
+    }
+    function myFunction8() {
+      document.getElementById("ww4").style.display = "block";
+    }
+    function myFunction9() {
+      document.getElementById("ww5").style.display = "block";
+    }
+  </script>
+
+  <style>
+  {
+   width:100%;
+   margin:0 auto;
+   padding:0px;
+   background-color:#0B3861;
+  }
+  #wrapper
+  {
+   text-align:center;
+   margin:0 auto;
+   padding:0px;
+   
+  }
+  #output_image
+  {
+   max-width:290px;
+   min-height: 300px;
+  }
+  </style>
+
+</head>
+<body>
+
+    <br>
+    <h2 class="insta_text"> Instagram Post</h2>
+    <hr>
+    <br>
+
+      <div class="container-fluid maindiv">
+        <div class="row">
+          <div class="col-sm-2 col-md-2"></div>
+          <div class="col-sm-8 col-md-8" style="border: 2px solid #660000;">
+                    <form action="index_action.php" method="Post" enctype="multipart/form-data">
+          		        <div class="container-fluid">
+        			          <div class="row">
+          				        <div class="col-sm-6 col-md-6" style="margin-top: 10px;">
+                              <div style="border: 1px solid black" align="center" ;>
+                                <img id="output_image"/>
+                              </div>
+                              <br><br>
+
+                              <div class="col-sm-12">
+                                <div id="wrapper">
+                                  <input type="file"  name="photo" accept="image/*" onchange="preview_image(event)">
+                                </div>
+                              </div>
+                          </div>
+
+          				
+          				        <div class="col-sm-6 col-md-6" style="border: 0px solid black; margin-top: 10px;">
+                                <div><textarea rows="3" name="texta" id="texta" Placeholder="Caption" style="border: 1px solid black; width: 100%;" maxlength="100"></textarea>
+                                </div>
+                                <br>
+          					
+                                <!-- tag start -->
+                                <div class="right_section" style="border: 1px solid black;">
+                                    <button type="button" class="btn btn-default tagme" name="tag" id="tag1"><p id="demo" onclick="myFunction5()" style="margin-bottom: 2px;">Preet</p></button>
+                                    <button type="button" class="btn btn-default tagme" name="tag" id="tag2"><p id="demo" onclick="myFunction6()"style="margin-bottom: 2px;">Ranveer</p></button>
+                                    <button type="button" class="btn btn-default tagme" name="tag" id="tag3"><p id="demo" onclick="myFunction7()"style="margin-bottom: 2px;">Akshay</p></button>
+                                    <button type="button" class="btn btn-default tagme" name="tag" id="tag4"><p id="demo" onclick="myFunction8()"style="margin-bottom: 2px;">Dipika</p></button>
+                                    <button type="button" class="btn btn-default tagme" name="tag" id="tag5"><p id="demo" onclick="myFunction9()"style="margin-bottom: 2px;">Rani</p></button>
+                                    
+                                      <div>
+                                        <p class="hiddentext" style="display: none;" id="ww1">Preet</p>
+                                        <p class="hiddentext" style="display: none;" id="ww2">Ranveer</p>
+                                        <p class="hiddentext" style="display: none;" id="ww3">Akshay</p>
+                                        <p class="hiddentext" style="display: none;" id="ww4">Dipika</p>
+                                        <p class="hiddentext" style="display: none;" id="ww5">Rani</p>
+                                      </div>
+                                </div>
+                                <br> 
+                
+                            <!-- tag end -->
+
+
+
+                    <div class="right_section">
+                      <input type="text" name="location" id="location" Placeholder="Location" style="width: 100%; border: white;">
+                    </div>
+                    <br>
+          					<div class="right_section">
+                      <input type="text" name="hashtag" id="hashtag" Placeholder="Hashtag"  pattern="#[a-zA-Z0-9_]{1,20}"  style="width: 100%; border: white;">
+                    </div>
+          					<br>
+                            <!-- select start -->
+                    <div class="container">
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="Facebook" name="share[]" id="Facebook">Facebook</label>
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="twitter" name="share[]" id="twitter">Twitter</label>
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="tumblr" name="share[]" id="tumblr">Tumblr</label>
+                      </div>
+                    </div>  
+                          <!-- select end -->
+
+
+                       <!-- share start --> 
+                    
+          					<div>
+                        <br>
+                        &nbsp; &nbsp;
+                        <input type="date" id="datee" name="datee" required> 
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                        <input type="time" id="timee" name="timee" required>
+          					</div>
+                    <br>
+        						<div style="text-align: right;">
+        								<button class="btn btn-danger">Cancel</button> &nbsp;
+        								<button type="Submit" class="btn btn-success">Submit</button>
+        						</div>
+    						    <br>
+
+          				</div>
+      				</div>
+     			 </div>
+          </form>
+
+          </div>
+          <div class="col-sm-2 col-md-2"></div>
+        </div>
+      </div>
+    <br>
+</body>
+</html>
